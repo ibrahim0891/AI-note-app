@@ -17,7 +17,7 @@ app.use(
         credentials: true,
     })
 );
-app.use('/api/v1' , mainRouter )
+app.use('/api/v1', mainRouter)
 
 
 mongoose.connect(config.db_url).then(() => {
@@ -26,13 +26,13 @@ mongoose.connect(config.db_url).then(() => {
     console.log(err);
 });
 
+app.listen(config.port, () => {
+    console.log("Server is running on port " + config.port);
+});
 
 // const main = () => {
-//     app.listen(config.port, () => {
-//         console.log("Server is running on port " + config.port);
-//     });
 
-   
+
 // }
 
 // main()
